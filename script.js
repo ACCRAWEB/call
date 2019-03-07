@@ -3,7 +3,7 @@
 //if (!location.hash) {
 //  location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
 //}
-const roomHash = "#9ac74b"//location.hash.substring(1);
+const roomHash = "9ac74b"//location.hash.substring(1);
 console.log(roomHash);
 
 
