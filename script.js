@@ -5,6 +5,32 @@ if (!location.hash) {
 }
 const roomHash = location.hash.substring(1);
 
+<?php
+
+        DEFINE ('DB_USER', 'phpmyadmin');
+        DEFINE ('DB_PASSWORD', '4LB9civ3RjMN');
+        DEFINE ('DB_HOST', '217.172.12.142');
+        DEFINE ('DB_NAME', 'nl_accra');
+
+        $conn = @mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
+        OR die("could not connect");
+
+
+        $query = 'INSERT INTO calling_address(addr) VALUES ("<script>document.writeln(roomHash)</script>")';
+        echo $query;
+        /*$result=mysqli_query($conn,$query);
+        
+        if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                        echo'<div class="item"><image src="images/generic-user.png">';
+                        echo '<input type="submit" class="btn" value='.$row['patientID'].' name="patient" ></div>';     
+                }
+        } */
+
+        $conn->close();
+?>
+
+
 // TODO: Replace with your own channel ID
 const drone = new ScaleDrone('WMp3FVcVSf8CV3lm');
 // Room name needs to be prefixed with 'observable-'
